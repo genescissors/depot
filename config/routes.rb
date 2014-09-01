@@ -1,4 +1,31 @@
+# == Route Map
+#
+#       Prefix Verb   URI Pattern                  Controller#Action
+#        carts GET    /carts(.:format)             carts#index
+#              POST   /carts(.:format)             carts#create
+#     new_cart GET    /carts/new(.:format)         carts#new
+#    edit_cart GET    /carts/:id/edit(.:format)    carts#edit
+#         cart GET    /carts/:id(.:format)         carts#show
+#              PATCH  /carts/:id(.:format)         carts#update
+#              PUT    /carts/:id(.:format)         carts#update
+#              DELETE /carts/:id(.:format)         carts#destroy
+#  store_index GET    /store/index(.:format)       store#index
+#     products GET    /products(.:format)          products#index
+#              POST   /products(.:format)          products#create
+#  new_product GET    /products/new(.:format)      products#new
+# edit_product GET    /products/:id/edit(.:format) products#edit
+#      product GET    /products/:id(.:format)      products#show
+#              PATCH  /products/:id(.:format)      products#update
+#              PUT    /products/:id(.:format)      products#update
+#              DELETE /products/:id(.:format)      products#destroy
+#        store GET    /                            store#index
+#
+
 Rails.application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   get 'store/index'
 
   resources :products
